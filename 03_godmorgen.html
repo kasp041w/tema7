@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+
+    <script>
+        let hour = new Date().getHours();
+        let resultat;
+
+        console.log(hour);
+
+        if (hour >= 5 && hour < 10) {
+            resultat = `Godmorgen, klokken er ${hour}`;
+
+        } else if (hour >= 10 && hour < 18) {
+            resultat = `Goddag, klokken er ${hour}`;
+
+        } else if (hour >= 18 && hour < 24) {
+            resultat = `Godaften, klokken er ${hour}`;
+
+        } else {
+            resultat = `Godnat, klokken er ${hour}`;
+        }
+
+        console.log(resultat);
+    </script>
+</body></html>
