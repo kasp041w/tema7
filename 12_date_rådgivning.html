@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Indtast din egen alder:</p>
+    <input type="text" id="egen">
+
+    <p>Indtast din dats alder:</p>
+    <input type="text" id="dats">
+
+    <button>Klik og se om du må date vedkommen, <br> Kig i konsollen</button>
+
+
+
+    <script>
+        let alderEgen = document.querySelector("#egen").value;
+        let alderDate = document.querySelector("#dats").value;
+
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+
+
+        function buttonClicked() {
+
+            if (alderEgen <= 15) {
+                console.log("Du kan ikke benytte siden. Du skal være over 15 år gammel");
+            } else if (alderDate <= 15) {
+                console.log("Du kan ikke benytte siden. Du skal være over 15 år gammel");
+            } else {
+                udregning();
+            }
+        }
+
+
+        function udregning() {
+            console.log(udregning);
+
+            let egenUdregning = alderEgen / 2 + 7;
+            console.log(`Din egen alder er ${alderEgen}
+            år, og du kan derfor date en på ${egenUdregning} år`);
+
+            let dateUdregning = alderDate / 2 + 7;
+            console.log(`Din egen alder er ${alderDate}
+                år, og du kan derfor date en på ${dateUdregning} år`);
+
+        }
+
+    </script>
+</body>
+
+</html>
