@@ -84,6 +84,8 @@
 
         const img_1 = document.querySelector("article:first-child img");
         console.log(img_1);
+        img_1.src = "https://placeimg.com/640/480/tech/grayscale";
+        img_1.alt = "En måge med øjne";
 
         const h3_1 = document.querySelector("article:first-child h3");
         console.log(h3_1);
@@ -98,7 +100,8 @@
 
         const img_2 = document.querySelector("article:nth-child(2) img");
         console.log(img_2);
-
+        img_2.src = "https://placeimg.com/640/480/animals/grayscale";
+        img_2.alt = "En kat med øjne";
 
         const h3_2 = document.querySelector("article:nth-child(2) h3");
         console.log(h3_2);
