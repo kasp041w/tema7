@@ -117,8 +117,20 @@
 
         /* Create ny article  */
 
-        let article3 = document.createElement("article");
-        article3.innerHTML = "<h1>Lort</h1>";
+        // lav en ny artikel med append
+        let main = document.querySelector("main");
+        let nyArtikel = document.createElement("article");
+        //nyt h2 element
+        let overskrift = document.createElement("h2");
+        //tekst til overskriften
+        let overSkrifttekst = document.createTextNode("Article 3");
+        //tilføj overskriften til article
+        overskrift.appendChild(overSkrifttekst);
+        //tilføj article til main
+        nyArtikel.appendChild(overskrift);
+        main.appendChild(nyArtikel);
+
+        nyArtikel.innerHTML = "<img src='http://mabe-kea.dk/E19/pics/pig.png'><h1>Ny overskrift</h1><p>kehvc.ksebdv.ksjebdv.khsbefv</p>";
 
     </script>
 </body>
