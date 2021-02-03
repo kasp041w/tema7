@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Playliste</h1>
+    <ul id="display"></ul>
+
+
+
+
+
+    <script>
+        // Lav playliste med sange
+        const playliste = ["Sådan nogle som os", "Sui Sui", "Så længe jeg lever", "Se venedig og dø", "Video video", "Lanternen", "Kysser Himlen farvel", "Hvis du forstod", "Barndommens gade", "Den bedste tid"];
+
+        // Udskiver hvert nummer i min liste, som li.
+        // + efter innderHTML gør, at næste nummer ikke overskriver det gamle
+        playliste.forEach(nummer => display.innerHTML += "<li>" + nummer + "</li>");
+    </script>
+</body></html>
