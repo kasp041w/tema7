@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        img {
+            /* width: 100%;
+ height: auto;*/
+        }
+
+        #knap {
+            position: relative;
+            right: 0;
+            top: 400px;
+        }
+    </style>
+</head>
+
+<header>
+</header>
+
+<body>
+    <main>
+
+        <h1>Tro på det - billedgallerie</h1>
+
+        <section>
+            <div id="billed">
+                <img src="https://raw.githubusercontent.com/martinbregnhoi/Tema7E20/master/billeder/img1.png" alt="d">
+                <p>Billeder brugt med tilladelse af Rasmus</p>
+            </div>
+            <div id="knap">
+                <button>Nyt billeder</button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script>
+        const billede = ["img1.png", "img2.png", "img3.png", "img4.png", "img5.png", "img6.png", "img7.png", "img8.png"];
+
+
+        document.querySelector("button").addEventListener("click", nytBilled);
+
+        const img = document.querySelector("#billed img");
+
+        let billedCount = 0;
+        //lyt til click
+
+        function nytBilled() {
+            console.log("Nyt billed");
+
+            const text = document.querySelector("button");
+
+
+            billedCount++
+            console.log(billedCount);
+
+
+            if (billedCount > 7) {
+                billedCount = 0;
+
+            }
+            if (billedCount < 7) {
+                text.textContent = "Nyt billeder";
+
+            } else if (billedCount = 7) {
+                text.textContent = "Forfra";
+
+            }
+
+            img.src = "https://raw.githubusercontent.com/martinbregnhoi/Tema7E20/master/billeder/" + billede[billedCount];
+            img.alt = billede[billedCount];
+        }
+    </script>
+</body></html>
