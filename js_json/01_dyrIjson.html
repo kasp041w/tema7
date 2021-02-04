@@ -34,11 +34,8 @@
 
 
 
-        //udskiver mit array i konsol
-        console.log(dyr);
-
         function start() {
-            console.log("DOM er Loaded, laver liste");
+            console.log("DOM er Loaded");
 
 
             // Deffiner min section og template
@@ -53,6 +50,7 @@
             async function hentdata(fil) {
                 const resultat = await fetch(fil);
                 const json = await resultat.json();
+                // Kalder functionen: vis - og tager json med over
                 vis(json);
 
             }
