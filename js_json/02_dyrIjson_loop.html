@@ -25,6 +25,8 @@
             <img src="" alt="">
             <p class="type"></p>
             <p class="levested"></p>
+            <p>Emner:</p>
+            <ul class="emneListe"></ul>
         </article>
     </template>
 
@@ -67,6 +69,11 @@
                     klon.querySelector("img").src = dyr.billed;
                     klon.querySelector(".type").textContent = dyr.type;
                     klon.querySelector(".levested").textContent = dyr.levested;
+
+                    dyr.emner.forEach(emne => {
+                        klon.querySelector(".emneListe").innerHTML += "<li>" + emne + "</li>"
+                    })
+
                     //udskriver lortet i min section
                     container.appendChild(klon);
                 })

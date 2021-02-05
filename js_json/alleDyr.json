@@ -2,27 +2,36 @@
         "navn": "frø",
         "type": "amfibie",
         "billed": "http://mabe-kea.dk/E19/pics/frog.png",
-        "levested": "sø"
+        "levested": "sø",
+        "emner": ["Slimet", "Klam", "nøjeren"]
             }, {
         "navn": "gris",
         "type": "pattedyr",
         "billed": "http://mabe-kea.dk/E19/pics/pig.png",
-        "levested": "svinefarm"
+        "levested": "svinefarm",
+        "emner": ["Grim", "Smager godt", "Lavt CO2 aftryk"]
+
             }, {
         "navn": "ræv",
         "type": "pattedyr",
         "billed": "http://mabe-kea.dk/E19/pics/fox.png",
-        "levested": "skoven"
+        "levested": "skoven",
+        "emner": ["Lidt cute", "Snu"]
+
             }, {
         "navn": "sild",
         "type": "fisk",
         "billed": "http://mabe-kea.dk/E19/pics/sild.jpg",
-        "levested": "på floor"
+        "levested": "på floor",
+        "emner": ["glat", "Jul", "nøjeren", "utilregnlig"]
+
             }, {
         "navn": "krokodille",
         "type": "krybdyr",
         "billed": "http://mabe-kea.dk/E19/pics/kroko.jpg",
-        "levested": "vandhuller"
+        "levested": "vandhuller",
+        "emner": ["Dræber", "Farlig", "Ikke i danmark"]
+
             }
 
         ]
