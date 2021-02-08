@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persongalleri</title>
+    <style>
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+        }
+
+        .person {
+            border: solid 2px #fd5858;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        .valgt {
+            background-color: red;
+            box-shadow: 1px 1px 10px blue;
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    <header>
+    </header>
+    <main>
+        <h1>Persongalleri</h1>
+
+        <button data-troende="alle" class="valgt">Alle</button>
+        <button data-troende="ja">Troende</button>
+        <button data-troende="nej">Ikke troende</button>
+        <button data-troende="tvivler">Tvivler</button>
+
+        <section id="data-container">
+
+            <template>
+                <article class="person">
+                    <img src="" alt="">
+                    <h2 class="navn"></h2>
+                    <p class="fødselsdag"></p>
+                    <p class="hobby"></p>
+                </article>
+            </template>
+
+        </section>
+
+
+    </main>
+
+    <script>
+        // Definnere adressen til server med indhold
+        const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri";
+
+        const medieurl = "https://persongalleri-5d3e.restdb.io/media/";
+
+        // api kode der skal give mig adgang til indholdet
+        const options = {
+            headers: {
+                'x-apikey': "600fe9211346a1524ff12e31"
+            }
+        };
+
+        // Deffiner min section og template
+        /* const container = document.querySelector("#data-container");
+         const templatePerson = document.querySelector("template");*/
+
+        let personer;
+        let filter = "alle";
+
+        document.addEventListener("DOMContentLoaded", start);
+
+
+
+
+        function start() {
+            console.log("DOM er Loaded");
+
+            const filterknapper = document.querySelectorAll("button");
+            filterknapper.forEach(knap => knap.addEventListener("click", visPersoner));
+            hentData();
+
+        }
+
+        function filtrerPersoner() {
+            filter = this.dataset.troende; //sætter ''filter'' til værdien af data(fra html)
+
+            visPersoner();
+        }
+
+        async function hentData() {
+            const JSONData = await fetch(url, options);
+            personer = await JSONData.json();
+            console.log("Personer", personer);
+        }
+
+
+        function visPersoner() {
+            const container = document.querySelector("#data-container");
+            const templatePerson = document.querySelector("template").content;
+
+            container.textContent = "";
+            personer.forEach(person => {
+
+                if (filter == person.troende || filter == "alle") {
+
+                    const klon = templatePerson.cloneNode(true).content;
+                    klon.querySelector("img").src = medieurl + person.billede[0];
+                    klon.querySelector(".navn").textContent = `${person.fornavn} ${person.efternavn}`;
+                    klon.querySelector(".fødselsdag").textContent = `Fødseldag: ${person.fødselsdag}`;
+                    klon.querySelector(".hobby").textContent = `Hobby: ${person.hobby}`;
+                    klon.querySelector(".hobby").textContent = `Troende: ${person.troende}`;
+
+
+                    container.appendChild(klon);
+                }
+            });
+            hentData();
+        }
+    </script>
+</body></html>
