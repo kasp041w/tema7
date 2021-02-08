@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="da">
 
 <head>
     <meta charset="utf-8">
@@ -9,6 +9,13 @@
         body {
             font-family: sans-serif;
         }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+
 
         img {
             width: 100%;
@@ -26,18 +33,29 @@
             border: 1px solid;
             border-radius: 1em;
         }
+
+        .valgt {
+            background-color: tomato;
+            box-shadow: 3px 2px 3px blue;
+        }
     </style>
 
 </head>
 
 <body>
+    <nav>
+        <button data-troende="alle" class="valgt">Alle</button>
+        <button data-troende="ja">Troende</button>
+        <button data-troende="nej">Ikke troende</button>
+        <button data-troende="tvivler">Tvivler</button>
+    </nav>
 
     <section id="liste"></section>
 
     <template>
         <article class="person">
             <h2 class="navn"></h2>
-            <p class="køn"></p>
+            <p class="troende"></p>
             <img src="" alt="" class="profil-billede">
         </article>
     </template>
@@ -52,6 +70,7 @@
         }
         document.addEventListener("DOMContentLoaded", start)
         let personer;
+        let filter = "ja";
 
 
         // første funktion der kaldes efter DOM er loaded
@@ -77,11 +96,14 @@
 
             personer.forEach(person => {
 
-                // loop igennem json (personer)
-                const klon = skabelon.cloneNode(true);
-                klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
-                klon.querySelector(".profil-billede").src = medieurl + person.billede;
-                dest.appendChild(klon);
+                if (filter == person.troende) {
+                    // loop igennem json (personer)
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
+                    klon.querySelector(".troende").textContent = `Troende: ${person.troende}`;
+                    klon.querySelector(".profil-billede").src = medieurl + person.billede;
+                    dest.appendChild(klon);
+                }
 
             })
         }
