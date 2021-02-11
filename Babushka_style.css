@@ -1,0 +1,248 @@
+      body {
+          font-family: sans-serif;
+          margin: 0;
+          padding: 0;
+      }
+
+      main {
+          padding-top: 25vw;
+          margin: 0 4vw;
+      }
+
+      article {
+          cursor: pointer;
+      }
+
+      .flagTop {
+          position: absolute
+      }
+
+      #overskrift {
+          position: absolute;
+          text-align: center;
+          z-index: 2;
+          margin: 2vw;
+          padding: 0px;
+          left: 0;
+          right: 0;
+          border: none;
+      }
+
+      #menu {
+          display: flex;
+          flex-direction: column;
+          padding-top: 40px;
+          padding-bottom: 50px;
+          background-color: black;
+          position: absolute;
+          width: 400px;
+          transition: transform 0.3s;
+          padding-right: 60px
+      }
+
+      #menu button {
+          margin: 20px 0 10px 100px;
+      }
+
+      #menuKnap {
+          filter: contrast(0);
+          display: inline-block;
+          position: fixed;
+          cursor: pointer;
+          height: auto;
+          font-size: 7vw;
+          z-index: 10;
+          top: -5px;
+          left: 5px;
+      }
+
+      button {
+          background-color: white;
+          border: solid 1px;
+          border-radius: 50px;
+          width: auto;
+          height: 40px;
+          font-family: 'Barlow Condensed', sans-serif;
+          font-size: 1.5rem;
+          cursor: pointer;
+          margin-left: 200px;
+          box-shadow: 3px 5px 1px 1px;
+      }
+
+      button:hover {
+          background-image: linear-gradient(white, rgba(0, 0, 255, 0.7), rgba(255, 0, 0, 0.75));
+      }
+
+      img {
+          width: 100%;
+          border-radius: 5px;
+      }
+
+      #liste {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-gap: 2em;
+      }
+
+      .ret {
+          padding: 1em;
+          border: 1px solid;
+          border-radius: 1em;
+      }
+
+      .valgt {
+          background-color: tomato;
+          box-shadow: 3px 2px 3px blue;
+          color: white;
+      }
+
+      p {
+          font-family: 'Barlow Condensed', sans-serif;
+      }
+
+      h1 {
+          font-family: 'Staatliches', cursive;
+      }
+
+      h2 {
+          font-family: 'Barlow Condensed', sans-serif;
+      }
+
+      h3 {
+          font-family: 'Barlow Condensed', sans-serif;
+          font-weight: 800;
+          font-size: 1.5rem;
+          color: white;
+          margin-left: 20px;
+      }
+
+      h1 {
+          border-bottom: solid black;
+          z-index: 1;
+      }
+
+      .hidden {
+          opacity: 0;
+          transform: translateX(-100%);
+
+      }
+
+      footer {
+          color: white;
+          background-color: black;
+          padding: 10px 20px 30px 20px;
+          margin-top: 10vw;
+      }
+
+      @media (min-width:800px) {
+
+          #overskrift {
+              font-size: 2rem;
+              text-align: left;
+              margin-left: 4vw;
+          }
+
+          #menuKnap {
+              display: none;
+          }
+
+          #menu.hidden {
+              transform: translateX(0);
+              opacity: 1;
+          }
+
+          #menu {
+              background-color: inherit;
+              flex-direction: row;
+              justify-content: space-between;
+              padding: 0;
+              top: 30vw;
+              color: black;
+              width: auto;
+              margin-left: 4vw;
+
+          }
+
+
+          h3 {
+              color: black;
+              margin-top: 25px;
+              margin-left: 0;
+          }
+
+          #menu button {
+              margin-left: 10px;
+          }
+
+          #liste {
+              margin-top: 100px;
+          }
+      }
+
+
+      @media (min-width:1200px) {
+          main {
+              margin: 0 10vw
+          }
+
+          #overskrift {
+              margin-left: 10vw;
+          }
+
+          #menu {
+              top: 29vw;
+              margin-left: 10vw;
+          }
+      }
+
+
+
+
+
+
+
+      /*-------------------- Babushka og ekstras................*/
+
+      .babushka1 {
+          position: absolute;
+          z-index: 1;
+          width: 65px;
+          height: auto;
+          left: 20vw;
+          top: 0vw;
+          box-shadow: 1px 1px 3px 3px;
+      }
+
+      .babushka2 {
+          position: absolute;
+          z-index: 1;
+          width: 65px;
+          height: auto;
+          left: 66vw;
+          top: 0vw;
+          box-shadow: 1px 1px 3px 3px;
+      }
+
+      @media (min-width:800px) {
+
+          .desktophide {
+              display: none;
+          }
+
+          .babushka1 {
+              position: absolute;
+              z-index: 1;
+              width: 65px;
+              height: auto;
+              left: 20vw;
+              top: 0vw;
+              box-shadow: none;
+          }
+
+      }
+
+      @media (min-width:1200px) {
+          .babushka1 {
+              left: 2vw;
+          }
+      }
