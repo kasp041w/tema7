@@ -63,6 +63,10 @@
         </template>
 
     </main>
+    <footer>
+        <h2>Mhhhhh Mad er godt</h2>
+        <p>Betil take away fra den sibiriske jernbane!</p>
+    </footer>
 
     <script>
         const header = document.querySelector("main h1");
@@ -120,6 +124,7 @@
                 // console.log("ret", ret.kategori);
                 if (filter == ret.kategori || filter == "alle") {
                     // loop igennem json (personer)
+
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = ret.navn;
                     klon.querySelector(".kortBeskrivelse").textContent = `${ret.kortbeskrivelse}`;
@@ -129,9 +134,10 @@
                     //kalder function visDetaljer
                     klon.querySelector(".ret").addEventListener("click", () => visDetaljer(ret));
                     dest.appendChild(klon);
-                }
 
+                }
             })
+
         }
 
         function visDetaljer(ret) {
@@ -168,8 +174,5 @@
 
             }
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
